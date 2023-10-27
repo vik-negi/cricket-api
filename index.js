@@ -23,7 +23,7 @@ const PORT = process.env.PORT || 5000;
 
 app.post("/api/cricket/select-team", MatchController.startMatch);
 app.get("/api/cricket/matchs", MatchController.matchs);
-app.get("/api/cricket/add-teams", MatchController.addTeams);
+app.post("/api/cricket/add-teams", MatchController.addTeams);
 
 app.get("/", (req, res) => {
   res.json("Server is Running ");
