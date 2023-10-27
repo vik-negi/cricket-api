@@ -12,6 +12,15 @@ class MatchController {
       message: "please select a team",
     });
   };
+
+  static addTeams = (req, res) => {
+    console.log(req.body);
+    const match = CricketMatch.insertMany(req.body);
+    return res.status(200).json({
+      data: match,
+      message: "teams added successfully",
+    });
+  };
   static matchs = async (req, res) => {
     const matchs = await CricketMatch.find();
     // console.log(matchs);
